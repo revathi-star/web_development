@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial scale=1.0"/>
+        <title>Super Cool Product</title>
+        <style>
+            *{
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body{
+                font-family: 'Segoe UI',sans-serif;
+                background-color:#f9f9f9;
+                color: #333;
+                line-height:1.6;
+            }
+
+            header{
+              background: #ffffff;  
+              padding: 20px 40px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              box-shadow: 0 2px 5 px rgba(0,0,0,0.1);
+            }
+
+            nav a {
+                margin-left:20px;
+                text-decoration: none;
+                color: #333;
+                font-weight: bold;
+            }
+
+            .hero{
+                padding: 80px 20px ;
+                background: #0077cc;
+                color: white;
+            }
+
+            .hero-content{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                max-width: 1200px;
+                margin: auto;
+            }
+
+            .hero-text{
+                text-align: center;
+                margin: auto;
+                max-width: 600px;
+            }
+
+            .hero-image img{
+                max-width: 100%;
+                height: auto;
+                border-radius: 10px;
+            }
+
+            .hero h1{
+                font-size: 48px;
+                margin-bottom: 20px;
+            }
+
+            .hero p{
+                font-size: 20px;
+                margin-bottom: 30px;
+            }
+
+            .hero button{
+                padding: 15px 30px;
+                font-size:18px;
+                color: #0077cc;
+                background: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .features{
+                display: flex;
+                justify-content: space-around;
+                padding: 60px 20px;
+                background: #fff;
+            }
+
+            .feature {
+                max-width: 300px;
+                text-align: center;
+            }
+
+            .feature h3{
+                margin-bottom: 10px;
+            }
+
+            footer{
+                background:#333;
+                color: white;
+                text-align: center;
+                padding: 30px 20px;
+                margin-top: 50px;
+            }
+
+            .signup{
+                background:#f4f4f4;
+                padding: 60px 20px;
+                text-align: center;
+            }
+
+            .signup h2{
+                font-size: 28px;
+                margin-bottom: 10px;
+            }
+
+            .signup p {
+                font-size: 18px;
+                margin-bottom: 30px;
+            }
+
+            .signup form{
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .signup input[type='email']{
+                padding: 12px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                min-width: 250px;
+            }
+
+            .signup button{
+                padding: 12px 25px;
+                font-size: 16px;
+                background: #0077cc;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .signup button:hover{
+                background: #005fa3;
+            }
+
+            @media (max-width: 768px) {
+            header {
+                display:flex;
+                flex-direction:column;
+                text-align:centre;
+            }
+          
+            nav a {
+              display: block;
+              margin: 10px 0;
+            }
+          
+            .hero-content {
+              flex-direction: column;
+              text-align: center;
+            }
+          
+            .hero-text {
+              margin-bottom: 20px;
+            }
+          
+            .hero h1 {
+              font-size: 32px;
+            }
+          
+            .hero p {
+              font-size: 18px;
+            }
+          
+            .hero button {
+              font-size: 16px;
+              padding: 12px 25px;
+            }
+          
+            .features {
+              flex-direction: column;
+              align-items: center;
+            }
+          
+            .feature {
+              margin-bottom: 30px;
+            }
+
+            .signup form{
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .signup input[type='email']{
+                width: 100%;
+                max-width: 300px;
+            }
+          }
+        </style>
+
+          
+    </head>
+    <body>
+
+        <header>
+            <h2>SuperCool</h2>
+            <nav>
+                <a href="#">Features</a>
+                <a href="#">Pricing</a>
+                <a href="#">Contact</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+            <h1>Level UP your life</h1>
+            <p>SuperCool is the ultimate tool for productivity and growth. Try it out today!</p>
+            <button>Get Started</button>
+                </div>
+                <div class="hero-image">
+                <img src="https://cdn.prod.website-files.com/67859049c02d67b2cfccef08/67859049c02d67b2cfccfd2d_64e7c879e04bff6a78466c58_LTOswwtzOfK3u13JBAV0PP6u-iJasx_dtt8nO6YitZI06KiT7wTkOPFPYa2N1nMnfgqifBxdoERCSoOe2uy4AzBpqtc2zldXGF1PUfurCtF5iJaCmSNp80MlywNaG3ehZMBzAjdwFOzT2mynx0VEGUw.png" alt="Product Image">
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature">
+                <h3>Fast Performance </h3>
+                <p>Our app is blaxing fast and efficient for productivity.</p>
+            </div>
+            <div class="feature">
+                <h3>Secure</h3>
+                <p>Top-nouch security keeps your data safe at all times.</p>
+            </div>
+            <div class="feature">
+                <h3>Easy to Use</h3>
+                <p>Designed for humans, with simplicity in every click.</p>
+            </div>
+        </section>
+
+        <section class="signup">
+            <h2>Stay in the loop</h2>
+            <p>Join our mailing list to get latest updates and exclusive content!</p>
+            <form>
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+             </form>
+        </section>
+
+        <footer>
+            <p>© 2025 SuperCool Inc. All rights reserved.</p>
+        </footer>
+     </body>
+</html>
