@@ -149,7 +149,10 @@
             .signup button:hover{
                 background: #005fa3;
             }
-
+            button.clicked{
+                transform: scale(0.95);
+                transition: transform 0.15s ease;
+            }
             @media (max-width: 768px) {
             header {
                 display:flex;
@@ -254,7 +257,18 @@
                 <button type="submit">Subscribe</button>
              </form>
         </section>
-
+        <script>
+            //Animate buttons on click
+            document.querySelectorAll('button').forEach(button=>{
+                button.addEventListener('click',()=>{
+                    button.classList.add('clicked');
+                    //remove the class after animation duration
+                    setTimeout(() => {
+                        button.classList.remove('clicked');
+                    }, 150); //match with the animation duration
+                });
+            });
+        </script>
         <footer>
             <p>© 2025 SuperCool Inc. All rights reserved.</p>
         </footer>
