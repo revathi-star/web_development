@@ -252,10 +252,11 @@
         <section class="signup">
             <h2>Stay in the loop</h2>
             <p>Join our mailing list to get latest updates and exclusive content!</p>
-            <form>
+            <form id='signup form'>
                 <input type="email" placeholder="Enter your email" required>
                 <button type="submit">Subscribe</button>
              </form>
+            <p id='tq-msg' style='display:none; color:green; margin-top:15px;'>Thanks for subscribing!</p>
         </section>
         <script>
             //Animate buttons on click
@@ -267,6 +268,16 @@
                         button.classList.remove('clicked');
                     }, 150); //match with the animation duration
                 });
+            });
+        </script>
+        <script>
+            const form=document.getElementById('signup-form');
+            const thankYouMsg=document.getElementById('tq-msg');
+            
+            form.addEventListener('submit',function(e){
+                e.preventDefault(); //stopPageFromRefreshing
+                thankYouMsg.style.display='block'; //showThankYouMessage
+                form.reset(); //Clear the form
             });
         </script>
         <footer>
