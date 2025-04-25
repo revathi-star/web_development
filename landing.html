@@ -285,7 +285,7 @@
                 <input type="email" placeholder="Enter your email" required>
                 <button type="submit">Subscribe</button>
              </form>
-            <p id='tq-msg' style='display:none; color:green; margin-top:15px;'>Thanks for subscribing!</p>
+            <p id='thanky-you-msg' style='display:none; color:green; margin-top:15px;'>Thanks for subscribing!</p>
         </section>
         <script>
             //Animate buttons on click
@@ -301,13 +301,32 @@
         </script>
         <script>
             const form=document.getElementById('signup-form');
-            const thankYouMsg=document.getElementById('tq-msg');
+            const thankYouMsg=document.getElementById('thank-you-msg');
             
-            form.addEventListener('submit',function(e){
+            form.addEventListener('submit',async function(e){
                 e.preventDefault(); //stopPageFromRefreshing
-                thankYouMsg.style.display='block'; //showThankYouMessage
-                form.reset(); //Clear the form
+                const email = form.querySelector('input[type="email"]').value;
+
+            try {
+            const response = await fetch('http://localhost:3000/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email })
             });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                thankYouMsg.textContent = result.message;
+                thankYouMsg.style.display = "block";
+                form.reset();
+            } else {
+                alert(result.error || 'Something went wrong');
+            }
+            } catch (err) {
+            alert('Failed to connect to server.');
+            }
+        });
         </script>
 
         <button id="dark-mode-toggle" style="margin-left: 20px;">Toggle Dark Mode</button>
