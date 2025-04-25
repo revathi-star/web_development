@@ -153,6 +153,35 @@
                 transform: scale(0.95);
                 transition: transform 0.15s ease;
             }
+
+            body.dark-mode{
+                background-color: #121212;
+                color: #f1f1f1;
+            }
+
+            header.dark-mode,
+            .hero.dark-mode,
+            .features.dark-mode,
+            .signup.dark-mode{
+                background-color: #1e1e1e;
+                color: #f1f1f1;
+            }
+
+            button{
+                transition: background 0.3s,color 0.3s, transform 0.15s;
+            }
+
+            button.dark-mode{
+                background-color: #333;
+                color:#fff;
+            }
+
+            input[type='email'].dark-mode{
+                background-color: #2b2b2b;
+                color: #fff;
+                border-color: #555;
+            }
+
             @media (max-width: 768px) {
             header {
                 display:flex;
@@ -278,6 +307,16 @@
                 e.preventDefault(); //stopPageFromRefreshing
                 thankYouMsg.style.display='block'; //showThankYouMessage
                 form.reset(); //Clear the form
+            });
+        </script>
+
+        <button id="dark-mode-toggle" style="margin-left: 20px;">Toggle Dark Mode</button>
+        <script>
+            const toggleBtn=document.getElementById('dark-mode-toggle');
+            const sections=document.querySelectorAll('body,header,.hero,.features,.signup,button,input[type="email"]')
+
+            toggleBtn.addEventListener('click', ()=>{
+                sections.forEach(section=>section.classList.toggle('dark-mode'));
             });
         </script>
         <footer>
